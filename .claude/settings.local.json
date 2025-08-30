@@ -5,7 +5,8 @@
       "Bash(git add:*)",
       "Bash(git push:*)",
       "Bash(python:*)",
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "Bash(\".venv/Scripts/python\" playground/faiss_test_infotalk.py)"
     ],
     "deny": [],
     "ask": []

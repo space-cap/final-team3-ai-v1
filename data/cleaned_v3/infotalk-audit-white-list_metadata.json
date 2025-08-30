@@ -1,0 +1,75 @@
+{
+  "filename": "infotalk-audit-white-list.md",
+  "headers": [
+    {
+      "level": 1,
+      "title": "알림톡 화이트리스트",
+      "line": 1
+    },
+    {
+      "level": 2,
+      "title": "회원가입",
+      "line": 5
+    },
+    {
+      "level": 2,
+      "title": "주문/배송",
+      "line": 16
+    },
+    {
+      "level": 2,
+      "title": "예약/신청",
+      "line": 27
+    },
+    {
+      "level": 2,
+      "title": "구매완료/만족도 조사",
+      "line": 38
+    },
+    {
+      "level": 2,
+      "title": "쿠폰/포인트/마일리지",
+      "line": 45
+    },
+    {
+      "level": 2,
+      "title": "안전/보안",
+      "line": 54
+    },
+    {
+      "level": 2,
+      "title": "금융",
+      "line": 61
+    },
+    {
+      "level": 2,
+      "title": "정당",
+      "line": 68
+    },
+    {
+      "level": 2,
+      "title": "알림톡 발송 안내",
+      "line": 73
+    },
+    {
+      "level": 2,
+      "title": "기타 안내/알림",
+      "line": 80
+    }
+  ],
+  "stats": {
+    "char_count": 1774,
+    "line_count": 85,
+    "word_count": 376,
+    "korean_sentences": 31,
+    "header_count": 11
+  },
+  "policy_keywords": [
+    "개인정보",
+    "승인",
+    "템플릿",
+    "규정",
+    "반려"
+  ],
+  "document_type": "audit_policy"
+}

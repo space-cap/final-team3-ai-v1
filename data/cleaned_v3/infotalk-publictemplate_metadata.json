@@ -1,0 +1,100 @@
+{
+  "filename": "infotalk-publictemplate.md",
+  "headers": [
+    {
+      "level": 1,
+      "title": "알림톡 공용 템플릿",
+      "line": 1
+    },
+    {
+      "level": 2,
+      "title": "1. 공용 템플릿 소개",
+      "line": 3
+    },
+    {
+      "level": 2,
+      "title": "2. 공용 템플릿 특징",
+      "line": 7
+    },
+    {
+      "level": 2,
+      "title": "3. 공용 템플릿 변수 사용 가이드",
+      "line": 13
+    },
+    {
+      "level": 2,
+      "title": "4. 공용 템플릿",
+      "line": 28
+    },
+    {
+      "level": 3,
+      "title": "1) 운영안내",
+      "line": 30
+    },
+    {
+      "level": 3,
+      "title": "2) 회원 가입",
+      "line": 36
+    },
+    {
+      "level": 3,
+      "title": "3) 예약 안내",
+      "line": 42
+    },
+    {
+      "level": 3,
+      "title": "4) 배송 안내",
+      "line": 48
+    },
+    {
+      "level": 3,
+      "title": "5) 주문 안내",
+      "line": 54
+    },
+    {
+      "level": 3,
+      "title": "6) 공지/주의/이용안내",
+      "line": 60
+    },
+    {
+      "level": 3,
+      "title": "7) 서비스 점검 안내",
+      "line": 66
+    },
+    {
+      "level": 3,
+      "title": "8) 휴면 계정 안내",
+      "line": 72
+    },
+    {
+      "level": 3,
+      "title": "9) 참여 결과 안내",
+      "line": 78
+    },
+    {
+      "level": 3,
+      "title": "10) 쿠폰/포인트 안내",
+      "line": 84
+    },
+    {
+      "level": 3,
+      "title": "11) 약관 변경/수신 동의",
+      "line": 90
+    }
+  ],
+  "stats": {
+    "char_count": 3534,
+    "line_count": 94,
+    "word_count": 630,
+    "korean_sentences": 8,
+    "header_count": 16
+  },
+  "policy_keywords": [
+    "승인",
+    "규칙",
+    "제한",
+    "형식",
+    "템플릿"
+  ],
+  "document_type": "content_guide"
+}

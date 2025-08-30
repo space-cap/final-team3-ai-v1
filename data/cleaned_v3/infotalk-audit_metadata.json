@@ -1,0 +1,44 @@
+{
+  "filename": "infotalk-audit.md",
+  "headers": [
+    {
+      "level": 1,
+      "title": "심사 가이드",
+      "line": 1
+    },
+    {
+      "level": 2,
+      "title": "1. 알림톡 템플릿 심사 기준",
+      "line": 5
+    },
+    {
+      "level": 2,
+      "title": "2. 정보성 메시지란?",
+      "line": 33
+    },
+    {
+      "level": 2,
+      "title": "3. 알림톡 서비스 기준",
+      "line": 56
+    }
+  ],
+  "stats": {
+    "char_count": 3880,
+    "line_count": 86,
+    "word_count": 935,
+    "korean_sentences": 32,
+    "header_count": 4
+  },
+  "policy_keywords": [
+    "검토",
+    "개인정보",
+    "승인",
+    "정책",
+    "기준",
+    "광고",
+    "템플릿",
+    "심사",
+    "반려"
+  ],
+  "document_type": "audit_policy"
+}

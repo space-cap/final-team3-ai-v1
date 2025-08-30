@@ -1,0 +1,28 @@
+# AI Assistant Rules for Python Virtual Environment
+
+## Core Rules:
+- ALWAYS use virtual environment for Python operations
+- Check if virtual environment is activated before any Python command
+- If .venv directory exists, activate it before running Python code
+- Never run pip install without virtual environment activated
+- Use ./.venv/Scripts/python.exe (Windows) or ./.venv/bin/python (Linux/Mac) for execution
+
+## Before any Python execution:
+1. Check if (.venv) appears in terminal prompt
+2. If not activated, run: .venv\Scripts\activate.bat (Windows) or source .venv/bin/activate (Linux/Mac)
+3. Verify with: which python
+
+## Package Installation:
+- Always activate virtual environment first
+- Use: pip install package-name
+- Never install globally
+
+## Python Script Execution:
+- Use: python script.py (after venv activation)
+- Or directly: ./.venv/Scripts/python.exe script.py
+
+## Project Structure:
+- Virtual environment: .venv/
+- Requirements: requirements.txt
+- Keep venv isolated from system Python
+

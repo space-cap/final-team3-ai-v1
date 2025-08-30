@@ -1,0 +1,57 @@
+{
+  "total_files": 8,
+  "total_chunks": 52,
+  "total_characters": 19363,
+  "average_chunk_length": 372,
+  "file_statistics": {
+    "content-guide-v1.md": {
+      "chunk_count": 2,
+      "total_chars": 650,
+      "avg_chunk_length": 325
+    },
+    "content-guide-v2.md": {
+      "chunk_count": 9,
+      "total_chars": 3019,
+      "avg_chunk_length": 335
+    },
+    "infotalk-audit-black-list.md": {
+      "chunk_count": 10,
+      "total_chars": 3527,
+      "avg_chunk_length": 352
+    },
+    "infotalk-audit-white-list.md": {
+      "chunk_count": 4,
+      "total_chars": 1493,
+      "avg_chunk_length": 373
+    },
+    "infotalk-audit.md": {
+      "chunk_count": 9,
+      "total_chars": 3689,
+      "avg_chunk_length": 409
+    },
+    "infotalk-operations.md": {
+      "chunk_count": 9,
+      "total_chars": 3116,
+      "avg_chunk_length": 346
+    },
+    "infotalk-publictemplate.md": {
+      "chunk_count": 3,
+      "total_chars": 1779,
+      "avg_chunk_length": 593
+    },
+    "infotalk.md": {
+      "chunk_count": 6,
+      "total_chars": 2090,
+      "avg_chunk_length": 348
+    }
+  },
+  "document_types": [
+    "운영정책",
+    "심사정책-금지사항",
+    "공용템플릿",
+    "심사정책",
+    "알림톡기본정책",
+    "콘텐츠가이드",
+    "심사정책-허용사항"
+  ]
+}

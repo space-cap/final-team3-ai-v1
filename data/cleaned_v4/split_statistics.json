@@ -1,0 +1,48 @@
+{
+  "total_files_created": 7,
+  "total_chunks": 52,
+  "file_details": {
+    "content-guide.jsonl": {
+      "document_type": "콘텐츠가이드",
+      "chunk_count": 11,
+      "total_chars": 3669,
+      "file_size_kb": 11.7
+    },
+    "audit-blacklist.jsonl": {
+      "document_type": "심사정책-금지사항",
+      "chunk_count": 10,
+      "total_chars": 3527,
+      "file_size_kb": 11.2
+    },
+    "audit-whitelist.jsonl": {
+      "document_type": "심사정책-허용사항",
+      "chunk_count": 4,
+      "total_chars": 1493,
+      "file_size_kb": 4.7
+    },
+    "audit-policy.jsonl": {
+      "document_type": "심사정책",
+      "chunk_count": 9,
+      "total_chars": 3689,
+      "file_size_kb": 11.9
+    },
+    "operations-policy.jsonl": {
+      "document_type": "운영정책",
+      "chunk_count": 9,
+      "total_chars": 3116,
+      "file_size_kb": 10.6
+    },
+    "public-template.jsonl": {
+      "document_type": "공용템플릿",
+      "chunk_count": 3,
+      "total_chars": 1779,
+      "file_size_kb": 4.8
+    },
+    "infotalk-basic.jsonl": {
+      "document_type": "알림톡기본정책",
+      "chunk_count": 6,
+      "total_chars": 2090,
+      "file_size_kb": 7.0
+    }
+  }
+}

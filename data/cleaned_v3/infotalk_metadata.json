@@ -1,0 +1,79 @@
+{
+  "filename": "infotalk.md",
+  "headers": [
+    {
+      "level": 2,
+      "title": "1. 알림톡",
+      "line": 1
+    },
+    {
+      "level": 3,
+      "title": "정보성 메시지란?",
+      "line": 7
+    },
+    {
+      "level": 3,
+      "title": "광고성 메시지란?",
+      "line": 10
+    },
+    {
+      "level": 2,
+      "title": "1-1. 알림톡 사업자별",
+      "line": 22
+    },
+    {
+      "level": 2,
+      "title": "1-2. 비즈니스 채널 알림톡 활용 기본 가이드",
+      "line": 41
+    },
+    {
+      "level": 3,
+      "title": "알림톡 템플릿 심사기준 강화",
+      "line": 51
+    },
+    {
+      "level": 2,
+      "title": "1-3. 비즈니스 채널 알림톡 활용",
+      "line": 54
+    },
+    {
+      "level": 3,
+      "title": "개요가 궁금해요",
+      "line": 56
+    },
+    {
+      "level": 3,
+      "title": "이용자 동의",
+      "line": 59
+    },
+    {
+      "level": 3,
+      "title": "개인정보",
+      "line": 62
+    },
+    {
+      "level": 2,
+      "title": "2. 카카오톡 채널로 발송되는 메시지 별 차이",
+      "line": 67
+    }
+  ],
+  "stats": {
+    "char_count": 2234,
+    "line_count": 76,
+    "word_count": 483,
+    "korean_sentences": 26,
+    "header_count": 11
+  },
+  "policy_keywords": [
+    "금지",
+    "개인정보",
+    "허가",
+    "홍보",
+    "기준",
+    "제한",
+    "광고",
+    "템플릿",
+    "심사"
+  ],
+  "document_type": "audit_policy"
+}

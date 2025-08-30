@@ -1,0 +1,74 @@
+{
+  "filename": "content-guide-v1.md",
+  "headers": [
+    {
+      "level": 1,
+      "title": "제목 가이드",
+      "line": 1
+    },
+    {
+      "level": 2,
+      "title": "1. 메시지 유형",
+      "line": 3
+    },
+    {
+      "level": 3,
+      "title": "1.1 기본형",
+      "line": 5
+    },
+    {
+      "level": 2,
+      "title": "2. 추가 정보형",
+      "line": 11
+    },
+    {
+      "level": 2,
+      "title": "3. 복수 정보형",
+      "line": 24
+    },
+    {
+      "level": 2,
+      "title": "4. 확인형",
+      "line": 31
+    },
+    {
+      "level": 2,
+      "title": "2. 카드 유형",
+      "line": 38
+    },
+    {
+      "level": 3,
+      "title": "2.1 이미지형",
+      "line": 40
+    },
+    {
+      "level": 3,
+      "title": "2.2 정보형",
+      "line": 48
+    },
+    {
+      "level": 3,
+      "title": "2.3 복수이미지형",
+      "line": 55
+    },
+    {
+      "level": 2,
+      "title": "3. 제목/설명 메시지",
+      "line": 62
+    },
+    {
+      "level": 3,
+      "title": "프로필/링크 메시지",
+      "line": 69
+    }
+  ],
+  "stats": {
+    "char_count": 750,
+    "line_count": 74,
+    "word_count": 187,
+    "korean_sentences": 20,
+    "header_count": 12
+  },
+  "policy_keywords": [],
+  "document_type": "content_guide"
+}

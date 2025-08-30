@@ -13,7 +13,7 @@ This is a Kakao AlimTalk template auto-generation AI service designed to help sm
 ### Environment Setup
 ```bash
 # Activate virtual environment (already exists)
-.venv\Scripts\activate  # Windows
+.venv\Scripts\activate.bat  # Windows
 source .venv/bin/activate  # Linux/Mac
 
 # Install dependencies
