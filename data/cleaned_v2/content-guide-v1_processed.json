@@ -1,0 +1,1080 @@
+{
+  "source_file": "content-guide-v1.md",
+  "metadata": {
+    "source_file": "content-guide-v1.md",
+    "total_length": 752,
+    "sections": [
+      {
+        "level": 1,
+        "title": "제목 가이드",
+        "type": "guide"
+      },
+      {
+        "level": 2,
+        "title": "1. 메시지 유형",
+        "type": "message_type"
+      },
+      {
+        "level": 3,
+        "title": "1.1 기본형",
+        "type": "general"
+      },
+      {
+        "level": 2,
+        "title": "2. 추가 정보형",
+        "type": "general"
+      },
+      {
+        "level": 2,
+        "title": "3. 복수 정보형",
+        "type": "general"
+      },
+      {
+        "level": 2,
+        "title": "4. 확인형",
+        "type": "general"
+      },
+      {
+        "level": 2,
+        "title": "2. 카드 유형",
+        "type": "general"
+      },
+      {
+        "level": 3,
+        "title": "2.1 이미지형",
+        "type": "general"
+      },
+      {
+        "level": 3,
+        "title": "2.2 정보형",
+        "type": "general"
+      },
+      {
+        "level": 3,
+        "title": "2.3 복수이미지형",
+        "type": "general"
+      },
+      {
+        "level": 2,
+        "title": "3. 제목/설명 메시지",
+        "type": "message_type"
+      },
+      {
+        "level": 3,
+        "title": "프로필/링크 메시지",
+        "type": "message_type"
+      }
+    ],
+    "policy_type": "template_guide",
+    "main_topics": [
+      "메시지 유형",
+      "메시지",
+      "포맷",
+      "템플릿",
+      "카드 유형"
+    ]
+  },
+  "chunks": [
+    {
+      "chunk_id": "section_0",
+      "content": "# 제목 가이드",
+      "section_title": "제목 가이드",
+      "section_type": "guide",
+      "section_level": 1,
+      "is_subsection": false,
+      "chunk_length": 8,
+      "metadata": {
+        "source_file": "content-guide-v1.md",
+        "total_length": 752,
+        "sections": [
+          {
+            "level": 1,
+            "title": "제목 가이드",
+            "type": "guide"
+          },
+          {
+            "level": 2,
+            "title": "1. 메시지 유형",
+            "type": "message_type"
+          },
+          {
+            "level": 3,
+            "title": "1.1 기본형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "2. 추가 정보형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "3. 복수 정보형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "4. 확인형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "2. 카드 유형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.1 이미지형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.2 정보형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.3 복수이미지형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "3. 제목/설명 메시지",
+            "type": "message_type"
+          },
+          {
+            "level": 3,
+            "title": "프로필/링크 메시지",
+            "type": "message_type"
+          }
+        ],
+        "policy_type": "template_guide",
+        "main_topics": [
+          "메시지 유형",
+          "메시지",
+          "포맷",
+          "템플릿",
+          "카드 유형"
+        ]
+      }
+    },
+    {
+      "chunk_id": "section_1",
+      "content": "## 1. 메시지 유형",
+      "section_title": "1. 메시지 유형",
+      "section_type": "message_type",
+      "section_level": 2,
+      "is_subsection": false,
+      "chunk_length": 12,
+      "metadata": {
+        "source_file": "content-guide-v1.md",
+        "total_length": 752,
+        "sections": [
+          {
+            "level": 1,
+            "title": "제목 가이드",
+            "type": "guide"
+          },
+          {
+            "level": 2,
+            "title": "1. 메시지 유형",
+            "type": "message_type"
+          },
+          {
+            "level": 3,
+            "title": "1.1 기본형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "2. 추가 정보형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "3. 복수 정보형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "4. 확인형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "2. 카드 유형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.1 이미지형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.2 정보형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.3 복수이미지형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "3. 제목/설명 메시지",
+            "type": "message_type"
+          },
+          {
+            "level": 3,
+            "title": "프로필/링크 메시지",
+            "type": "message_type"
+          }
+        ],
+        "policy_type": "template_guide",
+        "main_topics": [
+          "메시지 유형",
+          "메시지",
+          "포맷",
+          "템플릿",
+          "카드 유형"
+        ]
+      }
+    },
+    {
+      "chunk_id": "section_2",
+      "content": "### 1.1 기본형\n- 정보성 메시지를 깔끔하게 전달합니다.\n- 예: 일반 안내, 알림톡 등\n\n***",
+      "section_title": "1.1 기본형",
+      "section_type": "general",
+      "section_level": 3,
+      "is_subsection": false,
+      "chunk_length": 57,
+      "metadata": {
+        "source_file": "content-guide-v1.md",
+        "total_length": 752,
+        "sections": [
+          {
+            "level": 1,
+            "title": "제목 가이드",
+            "type": "guide"
+          },
+          {
+            "level": 2,
+            "title": "1. 메시지 유형",
+            "type": "message_type"
+          },
+          {
+            "level": 3,
+            "title": "1.1 기본형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "2. 추가 정보형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "3. 복수 정보형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "4. 확인형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "2. 카드 유형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.1 이미지형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.2 정보형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.3 복수이미지형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "3. 제목/설명 메시지",
+            "type": "message_type"
+          },
+          {
+            "level": 3,
+            "title": "프로필/링크 메시지",
+            "type": "message_type"
+          }
+        ],
+        "policy_type": "template_guide",
+        "main_topics": [
+          "메시지 유형",
+          "메시지",
+          "포맷",
+          "템플릿",
+          "카드 유형"
+        ]
+      }
+    },
+    {
+      "chunk_id": "section_3",
+      "content": "## 2. 추가 정보형\n\n- 여러 정보를 나열할 수 있으며, 내용이 많아도 한눈에 들어옵니다.\n\n```\n예시:\n상품명 : 상품A\n주문일시 : 2025-08-22\n결제금액 : 20,000원\n```\n\n***",
+      "section_title": "2. 추가 정보형",
+      "section_type": "general",
+      "section_level": 2,
+      "is_subsection": false,
+      "chunk_length": 113,
+      "metadata": {
+        "source_file": "content-guide-v1.md",
+        "total_length": 752,
+        "sections": [
+          {
+            "level": 1,
+            "title": "제목 가이드",
+            "type": "guide"
+          },
+          {
+            "level": 2,
+            "title": "1. 메시지 유형",
+            "type": "message_type"
+          },
+          {
+            "level": 3,
+            "title": "1.1 기본형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "2. 추가 정보형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "3. 복수 정보형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "4. 확인형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "2. 카드 유형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.1 이미지형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.2 정보형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.3 복수이미지형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "3. 제목/설명 메시지",
+            "type": "message_type"
+          },
+          {
+            "level": 3,
+            "title": "프로필/링크 메시지",
+            "type": "message_type"
+          }
+        ],
+        "policy_type": "template_guide",
+        "main_topics": [
+          "메시지 유형",
+          "메시지",
+          "포맷",
+          "템플릿",
+          "카드 유형"
+        ]
+      }
+    },
+    {
+      "chunk_id": "section_4",
+      "content": "## 3. 복수 정보형\n\n- 여러 개의 정보(택배사, 송장번호 등)를 묶어서 제공합니다.\n- 안내 예시와 함께 텍스트 박스 구성이 있습니다.\n\n***",
+      "section_title": "3. 복수 정보형",
+      "section_type": "general",
+      "section_level": 2,
+      "is_subsection": false,
+      "chunk_length": 83,
+      "metadata": {
+        "source_file": "content-guide-v1.md",
+        "total_length": 752,
+        "sections": [
+          {
+            "level": 1,
+            "title": "제목 가이드",
+            "type": "guide"
+          },
+          {
+            "level": 2,
+            "title": "1. 메시지 유형",
+            "type": "message_type"
+          },
+          {
+            "level": 3,
+            "title": "1.1 기본형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "2. 추가 정보형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "3. 복수 정보형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "4. 확인형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "2. 카드 유형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.1 이미지형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.2 정보형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.3 복수이미지형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "3. 제목/설명 메시지",
+            "type": "message_type"
+          },
+          {
+            "level": 3,
+            "title": "프로필/링크 메시지",
+            "type": "message_type"
+          }
+        ],
+        "policy_type": "template_guide",
+        "main_topics": [
+          "메시지 유형",
+          "메시지",
+          "포맷",
+          "템플릿",
+          "카드 유형"
+        ]
+      }
+    },
+    {
+      "chunk_id": "section_5",
+      "content": "## 4. 확인형\n\n- 사용자 행동을 유도합니다.\n- 버튼을 통해 링크 등 추가 기능 제공.\n\n***",
+      "section_title": "4. 확인형",
+      "section_type": "general",
+      "section_level": 2,
+      "is_subsection": false,
+      "chunk_length": 56,
+      "metadata": {
+        "source_file": "content-guide-v1.md",
+        "total_length": 752,
+        "sections": [
+          {
+            "level": 1,
+            "title": "제목 가이드",
+            "type": "guide"
+          },
+          {
+            "level": 2,
+            "title": "1. 메시지 유형",
+            "type": "message_type"
+          },
+          {
+            "level": 3,
+            "title": "1.1 기본형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "2. 추가 정보형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "3. 복수 정보형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "4. 확인형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "2. 카드 유형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.1 이미지형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.2 정보형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.3 복수이미지형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "3. 제목/설명 메시지",
+            "type": "message_type"
+          },
+          {
+            "level": 3,
+            "title": "프로필/링크 메시지",
+            "type": "message_type"
+          }
+        ],
+        "policy_type": "template_guide",
+        "main_topics": [
+          "메시지 유형",
+          "메시지",
+          "포맷",
+          "템플릿",
+          "카드 유형"
+        ]
+      }
+    },
+    {
+      "chunk_id": "section_6",
+      "content": "## 2. 카드 유형",
+      "section_title": "2. 카드 유형",
+      "section_type": "general",
+      "section_level": 2,
+      "is_subsection": false,
+      "chunk_length": 11,
+      "metadata": {
+        "source_file": "content-guide-v1.md",
+        "total_length": 752,
+        "sections": [
+          {
+            "level": 1,
+            "title": "제목 가이드",
+            "type": "guide"
+          },
+          {
+            "level": 2,
+            "title": "1. 메시지 유형",
+            "type": "message_type"
+          },
+          {
+            "level": 3,
+            "title": "1.1 기본형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "2. 추가 정보형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "3. 복수 정보형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "4. 확인형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "2. 카드 유형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.1 이미지형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.2 정보형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.3 복수이미지형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "3. 제목/설명 메시지",
+            "type": "message_type"
+          },
+          {
+            "level": 3,
+            "title": "프로필/링크 메시지",
+            "type": "message_type"
+          }
+        ],
+        "policy_type": "template_guide",
+        "main_topics": [
+          "메시지 유형",
+          "메시지",
+          "포맷",
+          "템플릿",
+          "카드 유형"
+        ]
+      }
+    },
+    {
+      "chunk_id": "section_7",
+      "content": "### 2.1 이미지형\n\n- 시각적으로 상품, 서비스, 이벤트 소개에 적합.\n- 예: 이벤트/프로모션, 상품안내 등\n- 이미지와 텍스트가 결합.\n\n***",
+      "section_title": "2.1 이미지형",
+      "section_type": "general",
+      "section_level": 3,
+      "is_subsection": false,
+      "chunk_length": 85,
+      "metadata": {
+        "source_file": "content-guide-v1.md",
+        "total_length": 752,
+        "sections": [
+          {
+            "level": 1,
+            "title": "제목 가이드",
+            "type": "guide"
+          },
+          {
+            "level": 2,
+            "title": "1. 메시지 유형",
+            "type": "message_type"
+          },
+          {
+            "level": 3,
+            "title": "1.1 기본형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "2. 추가 정보형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "3. 복수 정보형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "4. 확인형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "2. 카드 유형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.1 이미지형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.2 정보형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.3 복수이미지형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "3. 제목/설명 메시지",
+            "type": "message_type"
+          },
+          {
+            "level": 3,
+            "title": "프로필/링크 메시지",
+            "type": "message_type"
+          }
+        ],
+        "policy_type": "template_guide",
+        "main_topics": [
+          "메시지 유형",
+          "메시지",
+          "포맷",
+          "템플릿",
+          "카드 유형"
+        ]
+      }
+    },
+    {
+      "chunk_id": "section_8",
+      "content": "### 2.2 정보형\n\n- 다양한 정보를 주요 항목별로 나눠 제공합니다.\n- 카드형태로 여러 메시지 조합 가능.\n\n***",
+      "section_title": "2.2 정보형",
+      "section_type": "general",
+      "section_level": 3,
+      "is_subsection": false,
+      "chunk_length": 67,
+      "metadata": {
+        "source_file": "content-guide-v1.md",
+        "total_length": 752,
+        "sections": [
+          {
+            "level": 1,
+            "title": "제목 가이드",
+            "type": "guide"
+          },
+          {
+            "level": 2,
+            "title": "1. 메시지 유형",
+            "type": "message_type"
+          },
+          {
+            "level": 3,
+            "title": "1.1 기본형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "2. 추가 정보형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "3. 복수 정보형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "4. 확인형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "2. 카드 유형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.1 이미지형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.2 정보형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.3 복수이미지형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "3. 제목/설명 메시지",
+            "type": "message_type"
+          },
+          {
+            "level": 3,
+            "title": "프로필/링크 메시지",
+            "type": "message_type"
+          }
+        ],
+        "policy_type": "template_guide",
+        "main_topics": [
+          "메시지 유형",
+          "메시지",
+          "포맷",
+          "템플릿",
+          "카드 유형"
+        ]
+      }
+    },
+    {
+      "chunk_id": "section_9",
+      "content": "### 2.3 복수이미지형\n\n- 여러 이미지와 정보를 함께 노출하여 비교, 안내가 가능합니다.\n- 다양한 카드 예시(이벤트, 배송조회, 주문내역 등)를 포함.\n\n***",
+      "section_title": "2.3 복수이미지형",
+      "section_type": "general",
+      "section_level": 3,
+      "is_subsection": false,
+      "chunk_length": 93,
+      "metadata": {
+        "source_file": "content-guide-v1.md",
+        "total_length": 752,
+        "sections": [
+          {
+            "level": 1,
+            "title": "제목 가이드",
+            "type": "guide"
+          },
+          {
+            "level": 2,
+            "title": "1. 메시지 유형",
+            "type": "message_type"
+          },
+          {
+            "level": 3,
+            "title": "1.1 기본형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "2. 추가 정보형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "3. 복수 정보형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "4. 확인형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "2. 카드 유형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.1 이미지형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.2 정보형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.3 복수이미지형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "3. 제목/설명 메시지",
+            "type": "message_type"
+          },
+          {
+            "level": 3,
+            "title": "프로필/링크 메시지",
+            "type": "message_type"
+          }
+        ],
+        "policy_type": "template_guide",
+        "main_topics": [
+          "메시지 유형",
+          "메시지",
+          "포맷",
+          "템플릿",
+          "카드 유형"
+        ]
+      }
+    },
+    {
+      "chunk_id": "section_10",
+      "content": "## 3. 제목/설명 메시지\n\n- 제목과 본문이 분리되어 가독성이 좋고, 중요 알림/행동 유도에 사용.\n- 행동 버튼 예시 포함.\n\n***",
+      "section_title": "3. 제목/설명 메시지",
+      "section_type": "message_type",
+      "section_level": 2,
+      "is_subsection": false,
+      "chunk_length": 77,
+      "metadata": {
+        "source_file": "content-guide-v1.md",
+        "total_length": 752,
+        "sections": [
+          {
+            "level": 1,
+            "title": "제목 가이드",
+            "type": "guide"
+          },
+          {
+            "level": 2,
+            "title": "1. 메시지 유형",
+            "type": "message_type"
+          },
+          {
+            "level": 3,
+            "title": "1.1 기본형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "2. 추가 정보형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "3. 복수 정보형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "4. 확인형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "2. 카드 유형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.1 이미지형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.2 정보형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.3 복수이미지형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "3. 제목/설명 메시지",
+            "type": "message_type"
+          },
+          {
+            "level": 3,
+            "title": "프로필/링크 메시지",
+            "type": "message_type"
+          }
+        ],
+        "policy_type": "template_guide",
+        "main_topics": [
+          "메시지 유형",
+          "메시지",
+          "포맷",
+          "템플릿",
+          "카드 유형"
+        ]
+      }
+    },
+    {
+      "chunk_id": "section_11",
+      "content": "### 프로필/링크 메시지\n\n- 채널 프로필 이미지 및 링크 첨부 가능.\n- 예: 사업자 정보, 채널 안내 등\n\n***",
+      "section_title": "프로필/링크 메시지",
+      "section_type": "message_type",
+      "section_level": 3,
+      "is_subsection": false,
+      "chunk_length": 66,
+      "metadata": {
+        "source_file": "content-guide-v1.md",
+        "total_length": 752,
+        "sections": [
+          {
+            "level": 1,
+            "title": "제목 가이드",
+            "type": "guide"
+          },
+          {
+            "level": 2,
+            "title": "1. 메시지 유형",
+            "type": "message_type"
+          },
+          {
+            "level": 3,
+            "title": "1.1 기본형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "2. 추가 정보형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "3. 복수 정보형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "4. 확인형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "2. 카드 유형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.1 이미지형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.2 정보형",
+            "type": "general"
+          },
+          {
+            "level": 3,
+            "title": "2.3 복수이미지형",
+            "type": "general"
+          },
+          {
+            "level": 2,
+            "title": "3. 제목/설명 메시지",
+            "type": "message_type"
+          },
+          {
+            "level": 3,
+            "title": "프로필/링크 메시지",
+            "type": "message_type"
+          }
+        ],
+        "policy_type": "template_guide",
+        "main_topics": [
+          "메시지 유형",
+          "메시지",
+          "포맷",
+          "템플릿",
+          "카드 유형"
+        ]
+      }
+    }
+  ],
+  "total_chunks": 12,
+  "processing_info": {
+    "original_length": 752,
+    "avg_chunk_length": 60.666666666666664
+  }
+}

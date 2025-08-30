@@ -3,7 +3,9 @@
     "allow": [
       "Bash(cat:*)",
       "Bash(git add:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(python:*)",
+      "Bash(dir:*)"
     ],
     "deny": [],
     "ask": []

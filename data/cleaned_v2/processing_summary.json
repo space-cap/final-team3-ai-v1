@@ -1,0 +1,123 @@
+{
+  "total_files_processed": 8,
+  "total_chunks": 104,
+  "files": {
+    "content-guide-v1": {
+      "chunks": 12,
+      "policy_type": "template_guide",
+      "main_topics": [
+        "메시지 유형",
+        "메시지",
+        "포맷",
+        "템플릿",
+        "카드 유형"
+      ],
+      "avg_chunk_length": 60.666666666666664
+    },
+    "content-guide-v2": {
+      "chunks": 12,
+      "policy_type": "template_guide",
+      "main_topics": [
+        "메시지 유형",
+        "메시지",
+        "발송",
+        "포맷",
+        "템플릿",
+        "카드 유형"
+      ],
+      "avg_chunk_length": 313.0
+    },
+    "infotalk-audit-black-list": {
+      "chunks": 23,
+      "policy_type": "blacklist_policy",
+      "main_topics": [
+        "심사 기준",
+        "알림톡",
+        "메시지",
+        "발송",
+        "반려",
+        "승인",
+        "정보성 메시지"
+      ],
+      "avg_chunk_length": 173.7826086956522
+    },
+    "infotalk-audit-white-list": {
+      "chunks": 11,
+      "policy_type": "whitelist_policy",
+      "main_topics": [
+        "심사 기준",
+        "알림톡",
+        "발송",
+        "반려",
+        "승인",
+        "정보성 메시지"
+      ],
+      "avg_chunk_length": 162.0
+    },
+    "infotalk-audit": {
+      "chunks": 4,
+      "policy_type": "audit_policy",
+      "main_topics": [
+        "심사 기준",
+        "알림톡",
+        "메시지",
+        "발송",
+        "반려",
+        "가이드",
+        "승인",
+        "심사",
+        "템플릿",
+        "정보성 메시지"
+      ],
+      "avg_chunk_length": 983.0
+    },
+    "infotalk-operations": {
+      "chunks": 15,
+      "policy_type": "operation_policy",
+      "main_topics": [
+        "알림톡",
+        "운영정책",
+        "메시지",
+        "발송",
+        "가이드",
+        "발송 유의사항"
+      ],
+      "avg_chunk_length": 306.3333333333333
+    },
+    "infotalk-publictemplate": {
+      "chunks": 16,
+      "policy_type": "public_template",
+      "main_topics": [
+        "공용 템플릿",
+        "표준화",
+        "메시지",
+        "변수",
+        "템플릿"
+      ],
+      "avg_chunk_length": 263.0
+    },
+    "infotalk": {
+      "chunks": 11,
+      "policy_type": "basic_policy",
+      "main_topics": [
+        "알림톡",
+        "메시지",
+        "발송",
+        "비즈니스 채널",
+        "가이드",
+        "템플릿",
+        "정보성 메시지"
+      ],
+      "avg_chunk_length": 201.27272727272728
+    }
+  },
+  "policy_types": [
+    "whitelist_policy",
+    "blacklist_policy",
+    "public_template",
+    "basic_policy",
+    "template_guide",
+    "audit_policy",
+    "operation_policy"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "total_files": 8,
+  "total_chunks": 166,
+  "total_characters": 73942,
+  "avg_chunk_size": 445,
+  "file_details": {
+    "audit.md": {
+      "chunks_count": 15,
+      "total_chars": 6068,
+      "avg_chunk_size": 404
+    },
+    "black-list.md": {
+      "chunks_count": 14,
+      "total_chars": 8632,
+      "avg_chunk_size": 616
+    },
+    "content-guide.md": {
+      "chunks_count": 28,
+      "total_chars": 11785,
+      "avg_chunk_size": 420
+    },
+    "image.md": {
+      "chunks_count": 18,
+      "total_chars": 7063,
+      "avg_chunk_size": 392
+    },
+    "infotalk.md": {
+      "chunks_count": 15,
+      "total_chars": 6877,
+      "avg_chunk_size": 458
+    },
+    "operations.md": {
+      "chunks_count": 20,
+      "total_chars": 11602,
+      "avg_chunk_size": 580
+    },
+    "publictemplate.md": {
+      "chunks_count": 15,
+      "total_chars": 5329,
+      "avg_chunk_size": 355
+    },
+    "white-list.md": {
+      "chunks_count": 41,
+      "total_chars": 16586,
+      "avg_chunk_size": 404
+    }
+  },
+  "processing_date": "2024-12-20T00:00:00Z"
+}
