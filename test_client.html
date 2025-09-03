@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알림톡 템플릿 생성기 테스트</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-left: 4px solid #007bff;
+            border-radius: 5px;
+        }
+        .result h3 {
+            color: #333;
+            margin-top: 0;
+        }
+        .template-content {
+            background-color: white;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            font-family: monospace;
+        }
+        .score {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .error {
+            color: #dc3545;
+            background-color: #f8d7da;
+            border-color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 카카오 알림톡 템플릿 생성기</h1>
+        
+        <form id="templateForm">
+            <div class="form-group">
+                <label for="userInput">템플릿 요청사항 *</label>
+                <textarea id="userInput" placeholder="예: 주문 확인 메시지를 보내고 싶어요" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="businessType">업종</label>
+                <input type="text" id="businessType" placeholder="예: 온라인쇼핑몰">
+            </div>
+            
+            <div class="form-group">
+                <label for="messagePurpose">메시지 목적</label>
+                <select id="messagePurpose">
+                    <option value="">선택해주세요</option>
+                    <option value="주문확인">주문확인</option>
+                    <option value="배송안내">배송안내</option>
+                    <option value="결제알림">결제알림</option>
+                    <option value="예약확인">예약확인</option>
+                    <option value="일반안내">일반안내</option>
+                </select>
+            </div>
+            
+            <button type="submit">템플릿 생성</button>
+            <button type="button" onclick="testHealthCheck()">서버 상태 확인</button>
+        </form>
+        
+        <div id="result" style="display: none;"></div>
+    </div>
+
+    <script>
+        const API_BASE_URL = 'http://localhost:8000';
+        
+        document.getElementById('templateForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const userInput = document.getElementById('userInput').value;
+            const businessType = document.getElementById('businessType').value;
+            const messagePurpose = document.getElementById('messagePurpose').value;
+            
+            try {
+                showLoading();
+                
+                const response = await fetch(`${API_BASE_URL}/generate-template`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        user_input: userInput,
+                        business_type: businessType,
+                        message_purpose: messagePurpose
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                    showResult(result);
+                } else {
+                    showError(`API 오류: ${result.detail}`);
+                }
+            } catch (error) {
+                showError(`네트워크 오류: ${error.message}`);
+            }
+        });
+        
+        async function testHealthCheck() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/health`);
+                const result = await response.json();
+                
+                if (response.ok) {
+                    alert(`서버 상태: ${result.status}\n생성기 초기화: ${result.generator_initialized ? '성공' : '실패'}\nAPI 버전: ${result.api_version}`);
+                } else {
+                    alert('서버 연결 실패');
+                }
+            } catch (error) {
+                alert(`서버 연결 오류: ${error.message}`);
+            }
+        }
+        
+        function showLoading() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<h3>템플릿 생성 중...</h3>';
+            resultDiv.style.display = 'block';
+            resultDiv.className = 'result';
+        }
+        
+        function showResult(result) {
+            const resultDiv = document.getElementById('result');
+            
+            // 변수 목록 생성
+            let variablesList = '';
+            if (result.variables && result.variables.length > 0) {
+                variablesList = '<h4>템플릿 변수:</h4><ul>';
+                result.variables.forEach(variable => {
+                    variablesList += `<li><strong>${variable.placeholder}</strong>: ${variable.variableKey}</li>`;
+                });
+                variablesList += '</ul>';
+            }
+            
+            resultDiv.innerHTML = `
+                <h3>생성된 알림톡 템플릿</h3>
+                <div class="template-content" style="white-space: pre-wrap; background-color: white; padding: 15px; border: 1px solid #ddd; border-radius: 5px; margin: 10px 0;">${result.content}</div>
+                <p><strong>템플릿 제목:</strong> ${result.title}</p>
+                <p><strong>사용자 ID:</strong> ${result.userId}</p>
+                <p><strong>카테고리 ID:</strong> ${result.categoryId}</p>
+                <p><strong>업종:</strong> ${result.industries.join(', ') || '없음'}</p>
+                <p><strong>목적:</strong> ${result.purposes.join(', ') || '없음'}</p>
+                ${variablesList}
+            `;
+            resultDiv.style.display = 'block';
+            resultDiv.className = 'result';
+        }
+        
+        function showError(message) {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `<h3>오류 발생</h3><p>${message}</p>`;
+            resultDiv.style.display = 'block';
+            resultDiv.className = 'result error';
+        }
+    </script>
+</body>
+</html>

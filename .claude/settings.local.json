@@ -6,7 +6,10 @@
       "Bash(git push:*)",
       "Bash(python:*)",
       "Bash(dir:*)",
-      "Bash(\".venv/Scripts/python\" playground/faiss_test_infotalk.py)"
+      "Bash(\".venv/Scripts/python\" playground/faiss_test_infotalk.py)",
+      "Bash(pip install:*)",
+      "Bash(.venvScriptsactivate.bat)",
+      "Bash(.venv/Scripts/activate)"
     ],
     "deny": [],
     "ask": []
