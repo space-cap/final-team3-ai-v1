@@ -98,7 +98,7 @@ async def health_check():
 
 @app.post("/generate-template", response_model=TemplateResponse)
 async def generate_template(request: TemplateRequest):
-    """알림톡 템플릿 생성"""
+    """알림톡 템플릿 생성 및 데이터베이스 저장"""
     if not generator:
         raise HTTPException(status_code=500, detail="Template generator not initialized")
     
@@ -108,6 +108,18 @@ async def generate_template(request: TemplateRequest):
             business_type=request.business_type,
             message_purpose=request.message_purpose
         )
+        
+        # 데이터베이스에 자동 저장
+        request_id = generator.save_to_database(
+            user_input=request.user_input,
+            business_type=request.business_type,
+            message_purpose=request.message_purpose,
+            template_result=result
+        )
+        
+        # 결과에 request_id 추가
+        if request_id > 0:
+            result['id'] = request_id
         
         return TemplateResponse(**result)
     

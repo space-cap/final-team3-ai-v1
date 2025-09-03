@@ -91,19 +91,16 @@ class AlimTalkTemplateGenerator:
             "userId": user_id,
             "categoryId": 9101,  # 일반 카테고리
             "title": template_result['title'],
-            "content": self._format_template_content(
-                template_code=template_code,
-                template_content=template_result['template_content'],
-                variables=variables,
-                compliance_notes=template_result['compliance_notes']
-            ),
+            "content": template_result['template_content'],  # 템플릿 내용만 직접 사용
             "imageUrl": None,
             "type": "MESSAGE",
             "buttons": [],
             "variables": variables,
             "industries": [business_type] if business_type else [],
             "purposes": [message_purpose] if message_purpose else [],
-            "token_usage": template_result.get('token_usage', {})
+            "token_usage": template_result.get('token_usage', {}),
+            "template_code": template_code,  # 템플릿 코드를 별도 필드로 추가
+            "compliance_notes": template_result['compliance_notes']  # 준수 사항을 별도 필드로 추가
         }
         
         return result
