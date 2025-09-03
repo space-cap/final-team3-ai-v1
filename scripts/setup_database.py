@@ -1,15 +1,20 @@
 import mysql.connector
 from mysql.connector import Error
+import os
+from dotenv import load_dotenv
+
+# .env 파일 로드
+load_dotenv()
 
 def create_database_and_tables():
     """MySQL 데이터베이스와 테이블 생성"""
     
-    # MySQL 연결 설정
+    # MySQL 연결 설정 (.env 파일에서 로드)
     config = {
-        'host': 'localhost',
-        'user': 'steve',
-        'password': 'doolman',
-        'charset': 'utf8mb4',
+        'host': os.getenv('DB_HOST', 'localhost'),
+        'user': os.getenv('DB_USER', 'steve'),
+        'password': os.getenv('DB_PASSWORD', 'doolman'),
+        'charset': os.getenv('DB_CHARSET', 'utf8mb4'),
         'collation': 'utf8mb4_unicode_ci'
     }
     
@@ -22,8 +27,9 @@ def create_database_and_tables():
         cursor = connection.cursor()
         
         # 데이터베이스 생성
-        cursor.execute("CREATE DATABASE IF NOT EXISTS alimtalk_ai CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci")
-        cursor.execute("USE alimtalk_ai")
+        db_name = os.getenv('DB_NAME', 'alimtalk_ai')
+        cursor.execute(f"CREATE DATABASE IF NOT EXISTS {db_name} CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci")
+        cursor.execute(f"USE {db_name}")
         
         # 사용자 템플릿 요청 테이블
         cursor.execute("""

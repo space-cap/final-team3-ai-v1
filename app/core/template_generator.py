@@ -34,11 +34,11 @@ class AlimTalkTemplateGenerator:
         
         # MySQL 연결 설정
         self.db_config = {
-            'host': 'localhost',
-            'user': 'steve',
-            'password': 'doolman',
-            'database': 'alimtalk_ai',
-            'charset': 'utf8mb4'
+            'host': os.getenv('DB_HOST', 'localhost'),
+            'user': os.getenv('DB_USER', 'steve'),
+            'password': os.getenv('DB_PASSWORD', 'doolman'),
+            'database': os.getenv('DB_NAME', 'alimtalk_ai'),
+            'charset': os.getenv('DB_CHARSET', 'utf8mb4')
         }
         
         print(f"Template generator initialized with {self.index.ntotal} policy chunks")
@@ -102,7 +102,8 @@ class AlimTalkTemplateGenerator:
             "buttons": [],
             "variables": variables,
             "industries": [business_type] if business_type else [],
-            "purposes": [message_purpose] if message_purpose else []
+            "purposes": [message_purpose] if message_purpose else [],
+            "token_usage": template_result.get('token_usage', {})
         }
         
         return result
@@ -152,7 +153,7 @@ AlimTalk Template:"""
         return prompt
 
     def _generate_with_openai(self, user_input: str, business_type: str, message_purpose: str, policy_context: str) -> Dict:
-        """OpenAI API를 사용하여 템플릿 생성"""
+        """OpenAI API를 사용하여 템플릿 생성 (토큰 사용량 추적 포함)"""
         
         prompt = f"""당신은 카카오 알림톡 템플릿 전문가입니다. 다음 요청에 따라 정책을 준수하는 알림톡 템플릿을 생성해주세요.
 
@@ -189,6 +190,14 @@ AlimTalk Template:"""
                 max_tokens=1500
             )
             
+            # 토큰 사용량 추출
+            token_usage = {
+                'prompt_tokens': response.usage.prompt_tokens,
+                'completion_tokens': response.usage.completion_tokens,
+                'total_tokens': response.usage.total_tokens,
+                'token_cost': self._calculate_token_cost(response.usage)
+            }
+            
             # JSON 응답 파싱
             content = response.choices[0].message.content
             # JSON 블록 추출
@@ -202,11 +211,13 @@ AlimTalk Template:"""
                 json_content = content
             
             result = json.loads(json_content)
+            # 토큰 사용량 정보 추가
+            result['token_usage'] = token_usage
             return result
             
         except Exception as e:
             print(f"OpenAI API 오류: {e}")
-            # 기본 템플릿 반환
+            # 기본 템플릿 반환 (토큰 사용량 0)
             return {
                 "title": f"{business_type} 알림톡 템플릿",
                 "template_content": f"""안녕하세요, #{{고객명}}님.
@@ -221,8 +232,23 @@ AlimTalk Template:"""
 #{{업체명}}
 
 수신거부: #{{수신거부링크}}""",
-                "compliance_notes": "정보통신망법을 준수하여 작성된 템플릿입니다."
+                "compliance_notes": "정보통신망법을 준수하여 작성된 템플릿입니다.",
+                "token_usage": {
+                    'prompt_tokens': 0,
+                    'completion_tokens': 0,
+                    'total_tokens': 0,
+                    'token_cost': 0.0
+                }
             }
+    
+    def _calculate_token_cost(self, usage) -> float:
+        """GPT-4o-mini 토큰 비용 계산"""
+        # GPT-4o-mini 가격 (2024년 기준)
+        # Input: $0.000150 per 1K tokens
+        # Output: $0.000600 per 1K tokens
+        input_cost = (usage.prompt_tokens / 1000) * 0.000150
+        output_cost = (usage.completion_tokens / 1000) * 0.000600
+        return round(input_cost + output_cost, 6)
 
     def _extract_variables(self, template_content: str) -> List[Dict]:
         """템플릿에서 변수 추출"""
@@ -313,7 +339,7 @@ AlimTalk Template:"""
 
     def save_to_database(self, user_input: str, business_type: str, message_purpose: str, 
                         template_result: Dict) -> int:
-        """생성된 템플릿을 데이터베이스에 저장"""
+        """생성된 템플릿을 데이터베이스에 저장 (토큰 사용량 포함)"""
         connection = None
         cursor = None
         
@@ -329,18 +355,29 @@ AlimTalk Template:"""
             
             request_id = cursor.lastrowid
             
-            # 생성된 템플릿 저장
+            # 토큰 사용량 정보 추출
+            token_usage = template_result.get('token_usage', {})
+            
+            # 생성된 템플릿 저장 (토큰 사용량 포함)
             cursor.execute("""
                 INSERT INTO generated_templates 
-                (request_id, template_content, template_type, compliance_score, used_policies)
-                VALUES (%s, %s, %s, %s, %s)
+                (request_id, template_content, template_type, compliance_score, used_policies,
+                 prompt_tokens, completion_tokens, total_tokens, token_cost)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
             """, (
                 request_id,
-                template_result['template_content'],
-                template_result['template_type'],
-                template_result['compliance_score'],
-                json.dumps(template_result['used_policies'], ensure_ascii=False)
+                template_result.get('content', ''),  # 마크다운 형식 전체 콘텐츠
+                template_result.get('type', 'MESSAGE'),
+                1.0,  # 기본 컴플라이언스 점수
+                json.dumps(template_result.get('industries', []), ensure_ascii=False),
+                token_usage.get('prompt_tokens', 0),
+                token_usage.get('completion_tokens', 0),
+                token_usage.get('total_tokens', 0),
+                token_usage.get('token_cost', 0.0)
             ))
+            
+            # 일일 토큰 사용량 통계 업데이트
+            self._update_daily_token_stats(cursor, token_usage)
             
             connection.commit()
             return request_id
@@ -356,6 +393,36 @@ AlimTalk Template:"""
                 cursor.close()
             if connection:
                 connection.close()
+    
+    def _update_daily_token_stats(self, cursor, token_usage: Dict):
+        """일일 토큰 사용량 통계 업데이트"""
+        try:
+            from datetime import date
+            today = date.today()
+            
+            cursor.execute("""
+                INSERT INTO token_usage_stats 
+                (date, total_requests, total_prompt_tokens, total_completion_tokens, total_tokens, total_cost)
+                VALUES (%s, 1, %s, %s, %s, %s)
+                ON DUPLICATE KEY UPDATE
+                total_requests = total_requests + 1,
+                total_prompt_tokens = total_prompt_tokens + %s,
+                total_completion_tokens = total_completion_tokens + %s,
+                total_tokens = total_tokens + %s,
+                total_cost = total_cost + %s
+            """, (
+                today,
+                token_usage.get('prompt_tokens', 0),
+                token_usage.get('completion_tokens', 0),
+                token_usage.get('total_tokens', 0),
+                token_usage.get('token_cost', 0.0),
+                token_usage.get('prompt_tokens', 0),
+                token_usage.get('completion_tokens', 0),
+                token_usage.get('total_tokens', 0),
+                token_usage.get('token_cost', 0.0)
+            ))
+        except Exception as e:
+            print(f"Token stats update error: {e}")
 
 # 사용 예시
 if __name__ == "__main__":

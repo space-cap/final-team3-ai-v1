@@ -57,6 +57,12 @@ class Variable(BaseModel):
     placeholder: str
     inputType: str
 
+class TokenUsage(BaseModel):
+    prompt_tokens: int
+    completion_tokens: int
+    total_tokens: int
+    token_cost: float
+
 class TemplateResponse(BaseModel):
     id: int
     userId: int
@@ -69,6 +75,7 @@ class TemplateResponse(BaseModel):
     variables: List[Variable]
     industries: List[str]
     purposes: List[str]
+    token_usage: Optional[TokenUsage] = None
 
 class PolicySearchResponse(BaseModel):
     results: List[Dict]
@@ -169,6 +176,78 @@ async def get_template_types():
             {"type": "이미지형", "description": "이미지가 포함된 메시지"}
         ]
     }
+
+@app.get("/token-stats")
+async def get_token_statistics():
+    """토큰 사용량 통계 조회"""
+    if not generator:
+        raise HTTPException(status_code=500, detail="Template generator not initialized")
+    
+    import mysql.connector
+    from datetime import date, datetime, timedelta
+    
+    try:
+        connection = mysql.connector.connect(**generator.db_config)
+        cursor = connection.cursor(dictionary=True)
+        
+        # 최근 30일 통계
+        thirty_days_ago = date.today() - timedelta(days=30)
+        cursor.execute("""
+            SELECT * FROM token_usage_stats 
+            WHERE date >= %s 
+            ORDER BY date DESC
+        """, (thirty_days_ago,))
+        
+        daily_stats = cursor.fetchall()
+        
+        # 총 통계
+        cursor.execute("""
+            SELECT 
+                SUM(total_requests) as total_requests,
+                SUM(total_prompt_tokens) as total_prompt_tokens,
+                SUM(total_completion_tokens) as total_completion_tokens,
+                SUM(total_tokens) as total_tokens,
+                SUM(total_cost) as total_cost
+            FROM token_usage_stats
+        """)
+        
+        overall_stats = cursor.fetchone()
+        
+        # 오늘 통계
+        today = date.today()
+        cursor.execute("""
+            SELECT * FROM token_usage_stats WHERE date = %s
+        """, (today,))
+        
+        today_stats = cursor.fetchone()
+        
+        return {
+            "overall_stats": overall_stats or {
+                "total_requests": 0,
+                "total_prompt_tokens": 0,
+                "total_completion_tokens": 0,
+                "total_tokens": 0,
+                "total_cost": 0.0
+            },
+            "today_stats": today_stats or {
+                "total_requests": 0,
+                "total_prompt_tokens": 0,
+                "total_completion_tokens": 0,
+                "total_tokens": 0,
+                "total_cost": 0.0
+            },
+            "daily_stats": daily_stats,
+            "query_date": datetime.now().isoformat()
+        }
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Token statistics query failed: {str(e)}")
+    
+    finally:
+        if cursor:
+            cursor.close()
+        if connection:
+            connection.close()
 
 if __name__ == "__main__":
     import uvicorn

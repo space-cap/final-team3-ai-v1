@@ -115,6 +115,7 @@
             
             <button type="submit">템플릿 생성</button>
             <button type="button" onclick="testHealthCheck()">서버 상태 확인</button>
+            <button type="button" onclick="getTokenStats()">토큰 사용량 통계</button>
         </form>
         
         <div id="result" style="display: none;"></div>
@@ -192,6 +193,21 @@
                 variablesList += '</ul>';
             }
             
+            // 토큰 사용량 정보
+            let tokenUsageInfo = '';
+            if (result.token_usage) {
+                const usage = result.token_usage;
+                tokenUsageInfo = `
+                    <h4>토큰 사용량:</h4>
+                    <ul>
+                        <li><strong>프롬프트 토큰:</strong> ${usage.prompt_tokens}</li>
+                        <li><strong>생성 토큰:</strong> ${usage.completion_tokens}</li>
+                        <li><strong>총 토큰:</strong> ${usage.total_tokens}</li>
+                        <li><strong>예상 비용:</strong> $${usage.token_cost.toFixed(6)}</li>
+                    </ul>
+                `;
+            }
+            
             resultDiv.innerHTML = `
                 <h3>생성된 알림톡 템플릿</h3>
                 <div class="template-content" style="white-space: pre-wrap; background-color: white; padding: 15px; border: 1px solid #ddd; border-radius: 5px; margin: 10px 0;">${result.content}</div>
@@ -201,6 +217,7 @@
                 <p><strong>업종:</strong> ${result.industries.join(', ') || '없음'}</p>
                 <p><strong>목적:</strong> ${result.purposes.join(', ') || '없음'}</p>
                 ${variablesList}
+                ${tokenUsageInfo}
             `;
             resultDiv.style.display = 'block';
             resultDiv.className = 'result';
@@ -211,6 +228,65 @@
             resultDiv.innerHTML = `<h3>오류 발생</h3><p>${message}</p>`;
             resultDiv.style.display = 'block';
             resultDiv.className = 'result error';
+        }
+        
+        async function getTokenStats() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/token-stats`);
+                const stats = await response.json();
+                
+                if (response.ok) {
+                    showTokenStats(stats);
+                } else {
+                    alert(`통계 조회 오류: ${stats.detail}`);
+                }
+            } catch (error) {
+                alert(`통계 조회 실패: ${error.message}`);
+            }
+        }
+        
+        function showTokenStats(stats) {
+            const resultDiv = document.getElementById('result');
+            
+            let dailyStatsHtml = '';
+            if (stats.daily_stats && stats.daily_stats.length > 0) {
+                dailyStatsHtml = '<h4>최근 일별 통계 (최대 30일):</h4><table border="1" style="width:100%; border-collapse:collapse;"><tr><th>날짜</th><th>요청수</th><th>총 토큰</th><th>비용($)</th></tr>';
+                stats.daily_stats.slice(0, 10).forEach(day => {
+                    dailyStatsHtml += `<tr>
+                        <td>${day.date}</td>
+                        <td>${day.total_requests}</td>
+                        <td>${day.total_tokens}</td>
+                        <td>$${(day.total_cost || 0).toFixed(6)}</td>
+                    </tr>`;
+                });
+                dailyStatsHtml += '</table>';
+            }
+            
+            resultDiv.innerHTML = `
+                <h3>📊 토큰 사용량 통계</h3>
+                
+                <h4>📈 전체 누적 통계:</h4>
+                <ul>
+                    <li><strong>총 요청 수:</strong> ${stats.overall_stats.total_requests || 0}</li>
+                    <li><strong>총 프롬프트 토큰:</strong> ${stats.overall_stats.total_prompt_tokens || 0}</li>
+                    <li><strong>총 생성 토큰:</strong> ${stats.overall_stats.total_completion_tokens || 0}</li>
+                    <li><strong>총 토큰:</strong> ${stats.overall_stats.total_tokens || 0}</li>
+                    <li><strong>총 비용:</strong> $${(stats.overall_stats.total_cost || 0).toFixed(6)}</li>
+                </ul>
+                
+                <h4>📅 오늘 통계:</h4>
+                <ul>
+                    <li><strong>오늘 요청 수:</strong> ${stats.today_stats.total_requests || 0}</li>
+                    <li><strong>오늘 토큰:</strong> ${stats.today_stats.total_tokens || 0}</li>
+                    <li><strong>오늘 비용:</strong> $${(stats.today_stats.total_cost || 0).toFixed(6)}</li>
+                </ul>
+                
+                ${dailyStatsHtml}
+                
+                <p><small>조회 시간: ${new Date(stats.query_date).toLocaleString()}</small></p>
+            `;
+            resultDiv.style.display = 'block';
+            resultDiv.className = 'result';
         }
     </script>
 </body>
